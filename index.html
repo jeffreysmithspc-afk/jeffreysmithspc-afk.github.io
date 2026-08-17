@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impact Water Inc - Release of Liability</title>
+  <meta name="description" content="Impact Water Inc volunteer release of liability - read, sign, and submit.">
+  <meta name="robots" content="noindex">
+  <style>
+    /* ======================================================================
+       IMPACT WATER — VOLUNTEER RELEASE
+       Styled to IMPACT_Water_Style_Guide_v3 (June 2026).
+
+       Web expression: white ground leads, blue acts, no gold on screen.
+       Type: Arial only, every weight. Buttons: square, solid, bold uppercase.
+       ====================================================================== */
+
+    :root {
+      /* Palette — Section 02, Quick Reference p.18 */
+      --navy:        #0F3C5A;   /* Deep Water Navy  · headers, dark grounds   */
+      --logo-blue:   #07569B;   /* Logo Blue        · identity, primary action*/
+      --impact-blue: #1A6CA8;   /* IMPACT Blue      · accents, emphasis       */
+      --web-blue:    #6D9EEB;   /* Web UI Blue      · light panels, focus     */
+      --aqua:        #5AC3E3;   /* Droplet Aqua     · icons, highlights       */
+      --cream:       #F4F1EA;   /* Honduran Cream   · section blocks only     */
+      --mist:        #EEF4F8;   /* Page Mist        · page ground             */
+      --ink:         #333333;   /* body text                                  */
+      --muted:       #666666;   /* captions, meta                             */
+      --line:        #D8E1E9;
+      --alert:       #9E3B2E;   /* deep brick — brand forbids bright red      */
+      --confirm:     #07569B;   /* completion mark — see GOLD_ON_SCREEN below */
+    }
+
+    
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      margin: 0;
+      padding: 0 0 50px;
+      background: var(--mist);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;   /* Section 04 — Arial only */
+      font-size: 15px;
+      line-height: 1.65;                            /* body 1.6–1.7          */
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .wrap { max-width: 740px; margin: 0 auto; background: #fff; }
+
+    /* ---- Eyebrow rhythm: tracked uppercase + bold title (Section 04) ---- */
+    .eyebrow {
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3.5px;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* ---------- Site header: white bar, wordmark only (Section 10) ------- */
+    .site-header {
+      background: #fff;
+      padding: 15px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header img { display: block; width: 168px; height: auto; }
+
+    /* ---------- Hero block: full-width navy band (Section 08) ------------ */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 26px 22px 24px;
+    }
+    .hero .eyebrow { color: var(--aqua); margin-bottom: 11px; }
+    .hero h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.15;                            /* display 1.15          */
+      font-weight: bold;
+      letter-spacing: -0.2px;
+    }
+    .hero .sub {
+      margin: 12px 0 0;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #C9DCE9;
+    }
+
+    .lead {
+      padding: 20px 22px;
+      font-size: 16px;                              /* lead / intro 16–18px  */
+      line-height: 1.6;
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+    }
+    .lead strong { color: var(--navy); }
+
+    /* ---------- Sections ------------------------------------------------- */
+    section { padding: 24px 22px; }
+    section + section { border-top: 1px solid var(--line); }
+    section.on-cream { background: var(--cream); }   /* section ground only  */
+
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    /* Numbered badges — blue for standard steps (Section 07) */
+    .badge {
+      flex: 0 0 auto;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--logo-blue);
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 30px;
+      text-align: center;
+    }
+    .sec-head .titles { min-width: 0; }
+    .sec-head .eyebrow { color: var(--logo-blue); margin-bottom: 2px; }
+    .sec-head h2 {
+      margin: 0;
+      font-size: 19px;                              /* sub-head 20–24 → 19 mobile */
+      font-weight: bold;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    /* Droplet divider — "let the droplet do the divider work" (Do's) */
+    .droplet-rule {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 18px;
+    }
+    .droplet-rule .bar { flex: 1 1 auto; height: 1px; background: var(--line); }
+    .droplet-rule svg { flex: 0 0 auto; width: 13px; height: 17px; display: block; }
+
+    /* ---------- The release text ----------------------------------------- */
+    .doc-title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 1.3;
+      color: var(--navy);
+      margin: 0 0 18px;
+      text-transform: uppercase;
+    }
+    ol.clauses { list-style: none; margin: 0; padding: 0; }
+    li.clause {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .clause-num { flex: 0 0 22px; font-weight: bold; color: var(--impact-blue); }
+    .clause-body { flex: 1 1 auto; }
+    .clause-body strong { color: var(--navy); }
+    .name-token {
+      background: #fff;
+      border-bottom: 2px solid var(--aqua);
+      padding: 0 4px;
+      font-weight: bold;
+      color: var(--navy);
+      word-break: break-word;
+    }
+    section.on-cream .name-token { background: #fff; }
+
+    /* ---------- Fields ---------------------------------------------------- */
+    label.field { display: block; margin-bottom: 20px; }
+    label.field .lbl {
+      display: block;
+      font-weight: bold;
+      font-size: 14px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    label.field .hint {
+      display: block;
+      font-size: 13px;
+      font-style: italic;                            /* caption / meta        */
+      color: var(--muted);
+      margin-bottom: 7px;
+      line-height: 1.5;
+    }
+    input[type=text], input[type=email], textarea {
+      width: 100%;
+      padding: 12px 13px;
+      font-size: 16px;               /* 16px keeps iOS from zooming on focus */
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid #A8BAC8;
+      border-radius: 2px;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--logo-blue);
+      box-shadow: 0 0 0 3px rgba(109,158,235,.35);   /* Web UI Blue focus ring */
+    }
+    textarea { resize: vertical; min-height: 86px; line-height: 1.5; }
+    .req { color: var(--alert); font-weight: bold; }
+
+    /* ---------- Checkboxes ------------------------------------------------ */
+    .cert-lead {
+      font-weight: bold;
+      font-size: 14.5px;
+      color: var(--navy);
+      margin: 0 0 14px;
+    }
+    .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 13px 14px;
+      margin-bottom: 10px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--line);
+      cursor: pointer;
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+    .check input {
+      margin: 2px 0 0;
+      width: 20px; height: 20px;
+      flex: 0 0 auto;
+      accent-color: var(--logo-blue);
+    }
+    .check.checked { border-left-color: var(--logo-blue); }
+    .consent { border-left-color: var(--aqua); }
+    .consent.checked { border-left-color: var(--logo-blue); }
+
+    /* ---------- Signature pad --------------------------------------------- */
+    .sig-label {
+      display: block;
+      font-weight: bold;
+      font-size: 14px;
+      color: var(--navy);
+      margin: 20px 0 7px;
+    }
+    .sig-box {
+      position: relative;
+      background: #fff;
+      border: 1px solid #A8BAC8;
+      border-radius: 2px;
+      touch-action: none;
+      overflow: hidden;
+    }
+    .sig-box.signed { border-color: var(--logo-blue); }
+    canvas { display: block; width: 100%; height: 180px; touch-action: none; }
+    .sig-placeholder {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: #9BAAB6;
+      font-size: 14px;
+      font-style: italic;
+      pointer-events: none;
+    }
+    .sig-baseline {
+      position: absolute;
+      left: 24px; right: 24px; bottom: 44px;
+      border-bottom: 1px solid #C8D5DE;
+      pointer-events: none;
+    }
+    .sig-actions {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .sig-actions strong { color: var(--navy); }
+    .btn-clear {
+      background: none;
+      border: 1px solid #A8BAC8;
+      border-radius: 2px;
+      padding: 8px 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .btn-clear:active { background: var(--mist); }
+
+    /* ---------- Primary button (Section 06) -------------------------------
+       Solid rectangle, bold uppercase white label, generous padding,
+       no outlines, no rounding, no shadows. One per section.
+       Logo Blue rather than Web UI Blue: #6D9EEB carries white text at only
+       2.8:1 contrast, which fails legibility on a document people must read
+       before signing. See the note in the deployment guide.               */
+    .submit-zone { padding: 6px 22px 28px; }
+    button.submit {
+      width: 100%;
+      padding: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: #fff;
+      background: var(--logo-blue);
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+    }
+    button.submit:active { background: var(--navy); }
+    button.submit:disabled { background: #8FA6B6; cursor: default; }
+
+    .error {
+      display: none;
+      margin: 0 0 16px;
+      padding: 13px 15px;
+      background: #FAF0EE;
+      border-left: 4px solid var(--alert);
+      color: #7A2C22;
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+    .error.show { display: block; }
+
+    .fine {
+      font-size: 12.5px;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    /* ---------- Footer ---------------------------------------------------- */
+    .site-footer {
+      background: var(--navy);
+      padding: 18px 22px;
+      text-align: center;
+    }
+    .site-footer .eyebrow {
+      color: #7E9FB5;
+      letter-spacing: 2.5px;
+      font-size: 10px;
+    }
+
+    /* ---------- Confirmation ---------------------------------------------- */
+    #done { display: none; }
+    #done .hero { text-align: center; }
+    #done .body { padding: 30px 24px 34px; text-align: center; }
+    #done .tick {
+      width: 62px; height: 62px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--confirm);
+      color: #fff;
+      font-size: 33px;
+      line-height: 62px;
+    }
+    #done h2 {
+      font-size: 21px;
+      font-weight: bold;
+      color: var(--navy);
+      margin: 0 0 14px;
+      line-height: 1.25;
+    }
+    /* Scoped to .body so these never out-specify the hero and footer eyebrows. */
+    #done .body p { color: var(--ink); font-size: 15px; margin: 0 0 13px; }
+    #done .body p.meta { color: var(--muted); font-size: 13.5px; font-style: italic; }
+    #done .body p.signed-on {
+      color: var(--muted); font-size: 13px; font-style: italic; margin: -6px 0 16px;
+    }
+    #done a { color: var(--logo-blue); }
+    #done .ref {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 18px;
+      background: var(--cream);
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--navy);
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 15px; height: 15px;
+      margin-right: 10px;
+      border: 2px solid rgba(255,255,255,.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      vertical-align: -2px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 19px; }
+      .hero, .lead, section, .submit-zone, .site-header { padding-left: 17px; padding-right: 17px; }
+      .sec-head h2 { font-size: 17px; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- ============================ THE FORM ============================ -->
+  <div id="formView">
+
+    <!-- Site header — wordmark only on a white bar (Style Guide, Section 10) -->
+    <div class="site-header">
+      <img src="data:image/png;base64,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" alt="IMPACT">
+    </div>
+
+    <!-- Hero block — navy band anchors the most important moment (Sec. 08) -->
+    <div class="hero">
+      <p class="eyebrow">Volunteer Agreement</p>
+      <h1>Release of Liability and Assumption of Risk,<br>
+          Medical Release, and Photographic Release</h1>
+      <p class="sub">Honduras water projects &middot; Impact Water Inc</p>
+    </div>
+
+    <div class="lead">
+      <strong>Read this in full before you sign.</strong> It is a legal and
+      binding agreement that affects your rights. When you reach the bottom,
+      sign with your finger and submit. A signed copy is emailed to you and to
+      Impact Water right away.
+    </div>
+
+    <!-- ---------- Step 1 ---------- -->
+    <section>
+      <div class="sec-head">
+        <div class="badge">1</div>
+        <div class="titles">
+          <p class="eyebrow">Step One</p>
+          <h2>Your legal name</h2>
+        </div>
+      </div>
+      <label class="field">
+        <span class="lbl">Full legal name <span class="req">*</span></span>
+        <span class="hint">Exactly as it appears on your passport. It is written
+          into the agreement below as you type.</span>
+        <input type="text" id="fullName" autocomplete="name"
+               placeholder="Jane Marie Doe">
+      </label>
+    </section>
+
+    <!-- ---------- Step 2 ---------- -->
+    <section>
+      <div class="sec-head">
+        <div class="badge">2</div>
+        <div class="titles">
+          <p class="eyebrow">Step Two</p>
+          <h2>Read the agreement</h2>
+        </div>
+      </div>
+
+      <div class="droplet-rule">
+        <span class="bar"></span>
+        <svg viewBox="0 0 24 32" aria-hidden="true">
+          <path d="M12 0 C12 0 1 14 1 21 A11 11 0 0 0 23 21 C23 14 12 0 12 0 Z"
+                fill="#5AC3E3"/>
+          <path d="M7 20 a5 5 0 0 0 5 5" fill="none" stroke="#fff"
+                stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="bar"></span>
+      </div>
+
+      <p class="doc-title">RELEASE OF LIABILITY AND ASSUMPTION OF RISK, MEDICAL RELEASE, AND PHOTOGRAPHIC RELEASE</p>
+      <ol class="clauses"><li class="clause"><span class="clause-num">1.</span><div class="clause-body">Mr./Ms. <span class="name-token" id="nameToken">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, [full legal name as it appears on passport] hereinafter referred to as the "Volunteer," acknowledges that traveling to Honduras and participating in social service projects with Impact Water Inc., its officers, directors, managers, employees, and legal representatives, including without limitation Mark F. Smith, Jose Yanez, and Jeffrey Alan Smith (collectively, "Impact Water Inc"), is undertaken voluntarily and at Volunteer's own risk, and that Impact Water Inc bears no responsibility or liability whatsoever in connection therewith, except as required by law.</div></li>
+<li class="clause"><span class="clause-num">2.</span><div class="clause-body"><strong>Assumption of the Risks.</strong> Volunteer is aware and acknowledges that performing volunteer social service projects with Impact Water Inc may subject Volunteer to a number of risks, including the risks of injury, illness, or death. Volunteer understands and acknowledges that the risks include, without limitation: risks involved in transportation to, from, and within Honduras; risks that adequate medical facilities may not be available should Volunteer require medical attention; and risks of residing in and being subject to the laws of a foreign country. Volunteer is aware of the conditions that presently exist in Honduras, specifically, but not limited to, social unrest, security concerns, unsanitary health conditions in camps, villages, and municipalities, and the prevalence of hepatitis, malaria, cholera, dengue, and other diseases. Volunteer hereby assumes all risks associated with participating in social service projects in Honduras.</div></li>
+<li class="clause"><span class="clause-num">3.</span><div class="clause-body"><strong>General Release.</strong> Volunteer hereby releases and forever discharges Impact Water Inc from any and all claims and demands of whatever kind or nature, whether known or unknown, arising out of or connected in any way with Volunteer's travel to and stay in Honduras and Volunteer's voluntary participation in the work of Impact Water Inc or any other organization. Impact Water Inc shall not be liable for any personal injury, loss of life, property damage, accident, delay, inconvenience, change in itinerary or accommodations, or other irregularity that may occur for any reason, including due to: (1) wrongful, negligent, or arbitrary acts or omissions by any third party or authority; or (2) without limitation, Acts of God, fire, acts of governments or other authorities, wars, civil disturbances, riots, strikes, thefts, pilferage, epidemics, quarantines, or dangers incident to sea, land, and air travel. Volunteer further understands that, by signing this Release, <strong>Volunteer is expressly releasing Impact Water Inc FROM ANY NEGLIGENCE OR GROSS NEGLIGENCE</strong> committed by Impact Water Inc that results in bodily injury or monetary loss to Volunteer.</div></li>
+<li class="clause"><span class="clause-num">4.</span><div class="clause-body"><strong>Release Relating to Medical Treatment.</strong> Volunteer hereby releases and forever discharges Impact Water Inc from any and all claims and demands of whatever kind or nature, whether known or unknown, arising out of or connected in any way to first aid, medical treatment, or medical services rendered to Volunteer in the course of the trip to Honduras or otherwise related to the activities of Impact Water Inc.</div></li>
+<li class="clause"><span class="clause-num">5.</span><div class="clause-body"><strong>Volunteer's Responsibility.</strong> It is Volunteer's responsibility to obey all local and international laws. Impact Water Inc does not condone any type of illegal activity. Volunteer has sole responsibility for providing required documentation to federal and local authorities, which may include, without limitation, passport, travel itinerary, photographs, and similar documents. The decision to obtain any vaccinations, medications, or other preventive measures prior to traveling to Honduras is the sole responsibility of Volunteer.</div></li>
+<li class="clause"><span class="clause-num">6.</span><div class="clause-body"><strong>No Insurance or Other Employment Benefit.</strong> Volunteer understands and acknowledges that Volunteer is not an employee of Impact Water Inc. Volunteer understands and agrees that Impact Water Inc is under no obligation to provide, and will not provide, workers' compensation, malpractice insurance, or any employee benefit of any kind. Impact Water Inc will not provide travel insurance, accident insurance, death insurance, or insurance of any kind. Obtaining insurance coverage is the sole responsibility of Volunteer.</div></li>
+<li class="clause"><span class="clause-num">7.</span><div class="clause-body"><strong>Binding Effect.</strong> Volunteer understands and acknowledges that this is a legal and binding document that affects Volunteer's legal rights and remedies. Volunteer agrees that the obligations herein shall be binding upon Volunteer personally, as well as Volunteer's heirs, executors, administrators, and family members.</div></li>
+<li class="clause"><span class="clause-num">8.</span><div class="clause-body"><strong>Governing Law/Forum.</strong> This Release shall be governed by and interpreted in accordance with the laws of the State of Texas. In the event of any claim or legal action against Impact Water Inc, Volunteer agrees that the claim or action will be filed in the State of Texas and hereby waives any right to commence litigation, administrative action, or arbitration relating to Volunteer's travel to and stay in Honduras, or participation in the work of Impact Water Inc, in any jurisdiction other than the State of Texas.</div></li>
+<li class="clause"><span class="clause-num">9.</span><div class="clause-body">I, the Volunteer, certify that I have read all of the above and fully understand its content. I agree to hold Impact Water Inc harmless for any accidents, claims, losses, damages, or liabilities, including death, disability, or injury, that might occur. I expressly assume all risks with respect to the activities and circumstances described herein, and I pledge not to sue Impact Water Inc on account of any losses, claims, costs, liabilities, or damages. I agree not to claim the unenforceability of this Release.</div></li>
+<li class="clause"><span class="clause-num">10.</span><div class="clause-body"><strong>Medical Release Information.</strong> I hereby authorize Impact Water Inc and/or its representatives to initiate any medical attention necessary on my behalf, including related and appropriate air or ground transportation in the event I am incapable of presenting myself for such care. I agree to be financially responsible for any care provided and for the requisite transportation, and I authorize the release of any medical and/or insurance-related information pertinent to the circumstances.</div></li>
+<li class="clause"><span class="clause-num">11.</span><div class="clause-body"><strong>Photographic Release.</strong> I knowingly and willingly consent to the unrestricted, free use in any form of any photographs, interviews, films, videotapes, or other visual or auditory recordings, in any medium, including the internet, of me that Impact Water Inc or others may create in connection with my participation in this mission trip. I waive any right I may have or come to have to inspect or approve the finished project. I acknowledge and agree that I am not entitled to any compensation for the creation or use of the finished project.</div></li>
+<li class="clause"><span class="clause-num">12.</span><div class="clause-body"><strong>Severability.</strong> If any provision of this Release is held to be invalid or unenforceable, that provision shall be enforced to the maximum extent permissible, and the remaining provisions shall remain in full force and effect.</div></li></ol>
+    </section>
+
+    <!-- ---------- Step 3 ---------- -->
+    <section class="on-cream">
+      <div class="sec-head">
+        <div class="badge">3</div>
+        <div class="titles">
+          <p class="eyebrow">Step Three</p>
+          <h2>Certify what you have read</h2>
+        </div>
+      </div>
+      <p class="cert-lead">By signing this Document, I certify that:</p>
+      <div id="certList">
+        <label class="check"><input type="checkbox" class="cert" data-idx="0"><span>I have read and agree to the Waiver and Release of Liability (Items #1-#9)</span></label>
+<label class="check"><input type="checkbox" class="cert" data-idx="1"><span>I have read and agree to the Medical Release Information (Item #10)</span></label>
+<label class="check"><input type="checkbox" class="cert" data-idx="2"><span>I have read and agree to the Photographic Release (Item #11)</span></label>
+      </div>
+    </section>
+
+    <!-- ---------- Step 4 ---------- -->
+    <section>
+      <div class="sec-head">
+        <div class="badge">4</div>
+        <div class="titles">
+          <p class="eyebrow">Step Four</p>
+          <h2>Your details</h2>
+        </div>
+      </div>
+
+      <label class="field">
+        <span class="lbl">Printed address <span class="req">*</span></span>
+        <span class="hint">Street, city, state, and ZIP.</span>
+        <textarea id="address" autocomplete="street-address"
+                  placeholder="123 Main Street&#10;San Antonio, TX 78230"></textarea>
+      </label>
+
+      <label class="field">
+        <span class="lbl">Emergency contact name &amp; phone <span class="req">*</span></span>
+        <span class="hint">Someone we can reach if something happens to you in Honduras.</span>
+        <input type="text" id="emergencyContact"
+               placeholder="John Doe &middot; (210) 555-0142">
+      </label>
+
+      <label class="field">
+        <span class="lbl">Your email address <span class="req">*</span></span>
+        <span class="hint">Your signed copy goes here. Check it carefully.</span>
+        <input type="email" id="email" autocomplete="email"
+               inputmode="email" placeholder="you@example.com">
+      </label>
+    </section>
+
+    <!-- ---------- Step 5 ---------- -->
+    <section>
+      <div class="sec-head">
+        <div class="badge payoff">5</div>
+        <div class="titles">
+          <p class="eyebrow">Step Five</p>
+          <h2>Sign</h2>
+        </div>
+      </div>
+
+      <label class="check consent" id="consentWrap">
+        <input type="checkbox" id="esignConsent">
+        <span>I consent to sign this document electronically. I understand that my electronic signature below is the legal equivalent of my handwritten signature and that it binds me to this Release.</span>
+      </label>
+
+      <span class="sig-label">Volunteer's signature <span class="req">*</span></span>
+      <div class="sig-box" id="sigBox">
+        <canvas id="sigPad"></canvas>
+        <div class="sig-baseline"></div>
+        <div class="sig-placeholder" id="sigPlaceholder">
+          Sign here with your finger
+        </div>
+      </div>
+      <div class="sig-actions">
+        <span>Date: <strong id="todayDate"></strong></span>
+        <button type="button" class="btn-clear" id="btnClear">Clear</button>
+      </div>
+    </section>
+
+    <!-- ---------- Submit ---------- -->
+    <div class="submit-zone">
+      <div class="error" id="errorBox"></div>
+      <button type="button" class="submit" id="btnSubmit">
+        Sign and submit my release
+      </button>
+      <p class="fine">
+        Tapping submit signs this document electronically. A PDF holding the
+        full agreement above, your details, and your signature is emailed to
+        you and to Impact Water Inc, and the time and device of signing are
+        recorded.
+      </p>
+    </div>
+
+    <div class="site-footer">
+      <p class="eyebrow">Impact Water &middot; Volunteer Release &middot; 8.15.2026</p>
+    </div>
+  </div>
+
+  <!-- ========================== CONFIRMATION ========================== -->
+  <div id="done">
+    <div class="site-header">
+      <img src="data:image/png;base64,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" alt="IMPACT">
+    </div>
+    <div class="hero">
+      <p class="eyebrow">Signed</p>
+      <h1>Thank you. Your release is complete.</h1>
+    </div>
+    <div class="body">
+      <div class="tick">&#10003;</div>
+      <h2 id="doneHead"></h2>
+      <p class="signed-on" id="doneDate"></p>
+      <p>A PDF copy is on its way to your inbox and to Impact Water. Keep it
+         &mdash; it holds the full agreement and your signature.</p>
+      <p class="meta">Nothing arriving? Check your spam folder, then email
+         <a href="mailto:mark@impactwater.org">mark@impactwater.org</a>.</p>
+      <div class="ref" id="doneRef"></div>
+    </div>
+    <div class="site-footer">
+      <p class="eyebrow">Changing the life of a village and the heart of a man</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------- Live name insertion into clause 1 ---------------- */
+  var nameInput = document.getElementById('fullName');
+  var nameToken = document.getElementById('nameToken');
+  var BLANK = new Array(19).join(' ');
+  var EXEC_URL = 'https://script.google.com/macros/s/AKfycbz-9mQWoY9WarwnyBewb_Rrzlrb2Od3xu9e7gTQhWgIIybYHAtjeKI95KaGYi_71nRF/exec';
+  var FORM_VERSION = '8.15.2026';
+  var TODAY = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  var _td = document.getElementById('todayDate');
+  if (_td) _td.textContent = TODAY;
+
+  nameInput.addEventListener('input', function () {
+    var v = nameInput.value.trim();
+    if (nameToken) nameToken.textContent = v || BLANK;
+  });
+
+  /* ---------------- Checkbox visual state ---------------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.check input'), function (input) {
+    var wrap = input.closest('.check');
+    input.addEventListener('change', function () {
+      wrap.classList.toggle('checked', input.checked);
+    });
+  });
+
+  /* ---------------- Signature pad ---------------- */
+  var canvas = document.getElementById('sigPad');
+  var ctx = canvas.getContext('2d');
+  var placeholder = document.getElementById('sigPlaceholder');
+  var sigBox = document.getElementById('sigBox');
+  var drawing = false;
+  var hasSignature = false;
+  var lastX = 0, lastY = 0;
+  var ratio = Math.max(window.devicePixelRatio || 1, 1);
+
+  function sizeCanvas() {
+    var saved = hasSignature ? canvas.toDataURL('image/png') : null;
+    var rect = canvas.getBoundingClientRect();
+    canvas.width  = Math.round(rect.width  * ratio);
+    canvas.height = Math.round(rect.height * ratio);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    ctx.lineWidth = 2.4;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#0F3C5A';       /* Deep Water Navy */
+    if (saved) {
+      var img = new Image();
+      img.onload = function () { ctx.drawImage(img, 0, 0, rect.width, rect.height); };
+      img.src = saved;
+    }
+  }
+
+  function pos(evt) {
+    var rect = canvas.getBoundingClientRect();
+    var src = (evt.touches && evt.touches[0]) ? evt.touches[0] : evt;
+    return { x: src.clientX - rect.left, y: src.clientY - rect.top };
+  }
+
+  function start(evt) {
+    evt.preventDefault();
+    drawing = true;
+    var p = pos(evt);
+    lastX = p.x; lastY = p.y;
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 1.2, 0, Math.PI * 2);
+    ctx.fillStyle = '#0F3C5A';
+    ctx.fill();
+    markSigned();
+  }
+
+  function move(evt) {
+    if (!drawing) return;
+    evt.preventDefault();
+    var p = pos(evt);
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+    lastX = p.x; lastY = p.y;
+  }
+
+  function end(evt) {
+    if (!drawing) return;
+    if (evt && evt.preventDefault) evt.preventDefault();
+    drawing = false;
+  }
+
+  function markSigned() {
+    if (hasSignature) return;
+    hasSignature = true;
+    placeholder.style.display = 'none';
+    sigBox.classList.add('signed');
+  }
+
+  canvas.addEventListener('mousedown', start);
+  canvas.addEventListener('mousemove', move);
+  window.addEventListener('mouseup', end);
+  canvas.addEventListener('mouseleave', end);
+  canvas.addEventListener('touchstart', start, { passive: false });
+  canvas.addEventListener('touchmove', move, { passive: false });
+  canvas.addEventListener('touchend', end, { passive: false });
+  canvas.addEventListener('touchcancel', end, { passive: false });
+
+  document.getElementById('btnClear').addEventListener('click', function () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    hasSignature = false;
+    placeholder.style.display = 'flex';
+    sigBox.classList.remove('signed');
+  });
+
+  window.addEventListener('resize', sizeCanvas);
+  window.addEventListener('orientationchange', function () { setTimeout(sizeCanvas, 250); });
+  sizeCanvas();
+
+  /* ---------------- Validation and submit ---------------- */
+  var errorBox = document.getElementById('errorBox');
+  var btn = document.getElementById('btnSubmit');
+
+  function showError(msg, focusEl) {
+    errorBox.textContent = msg;
+    errorBox.classList.add('show');
+    var target = focusEl || errorBox;
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (focusEl && focusEl.focus) {
+      try { focusEl.focus({ preventScroll: true }); } catch (e) {}
+    }
+  }
+
+  function clearError() {
+    errorBox.textContent = '';
+    errorBox.classList.remove('show');
+  }
+
+  btn.addEventListener('click', function () {
+    clearError();
+
+    var fullName = document.getElementById('fullName').value.trim();
+    var address = document.getElementById('address').value.trim();
+    var emergencyContact = document.getElementById('emergencyContact').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var consent = document.getElementById('esignConsent').checked;
+
+    var certifications = Array.prototype.map.call(
+      document.querySelectorAll('.cert'), function (c) { return c.checked; });
+
+    if (!fullName) {
+      return showError('Please enter your full legal name as it appears on your passport.',
+                       document.getElementById('fullName'));
+    }
+    if (fullName.indexOf(' ') === -1) {
+      return showError('Please enter your full name, including your last name.',
+                       document.getElementById('fullName'));
+    }
+    for (var i = 0; i < certifications.length; i++) {
+      if (!certifications[i]) {
+        return showError('Please check all three boxes in Step 3 to confirm you have read each part of this document.',
+                         document.getElementById('certList'));
+      }
+    }
+    if (!address) {
+      return showError('Please enter your printed address.',
+                       document.getElementById('address'));
+    }
+    if (!emergencyContact) {
+      return showError('Please enter an emergency contact name and phone number.',
+                       document.getElementById('emergencyContact'));
+    }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      return showError('Please enter a valid email address so we can send you your signed copy.',
+                       document.getElementById('email'));
+    }
+    if (!consent) {
+      return showError('Please check the box consenting to sign electronically.',
+                       document.getElementById('consentWrap'));
+    }
+    if (!hasSignature) {
+      return showError('Please sign in the signature box before submitting.',
+                       document.getElementById('sigBox'));
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span>Submitting&hellip;';
+
+    var handleSuccess = function (res) {
+        if (res && res.ok) {
+          document.getElementById('formView').style.display = 'none';
+          document.getElementById('doneHead').textContent = fullName;
+          document.getElementById('doneDate').textContent = 'Signed ' + TODAY;
+          document.getElementById('doneRef').textContent = 'Reference ' + res.submissionId;
+          document.getElementById('done').style.display = 'block';
+          window.scrollTo(0, 0);
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Sign and submit my release';
+          showError((res && res.error) || 'Something went wrong. Please try again.');
+        }
+    };
+    var handleFailure = function (err) {
+        btn.disabled = false;
+        btn.textContent = 'Sign and submit my release';
+        showError('We could not submit your form: ' +
+                  (err && err.message ? err.message : 'unknown error') +
+                  '. Check your connection and try again, or email mark@impactwater.org.');
+    };
+
+    // Content-Type text/plain keeps this a "simple" request (no CORS preflight,
+    // which Apps Script cannot answer). Cross-origin fetch sends no Google
+    // cookies, so every submission arrives anonymously - the proven-good path.
+    fetch(EXEC_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({
+        fullName: fullName,
+        address: address,
+        email: email,
+        emergencyContact: emergencyContact,
+        certifications: certifications,
+        esignConsent: true,
+        signatureBase64: canvas.toDataURL('image/png').split(',')[1],
+        userAgent: navigator.userAgent,
+        clientTime: new Date().toString(),
+        formVersion: FORM_VERSION
+      })
+    })
+    .then(function (r) {
+      if (!r.ok) { throw new Error('HTTP ' + r.status); }
+      return r.json();
+    })
+    .then(handleSuccess)
+    .catch(handleFailure);
+  });
+
+})();
+</script>
+</body>
+</html>
