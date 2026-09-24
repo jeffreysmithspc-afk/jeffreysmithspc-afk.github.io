@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Player sign-in for the Impact Water 2026 Charity Golf Tournament at Canyon Springs Golf Club.">
+<title>Player Sign-In · Impact Water 2026 Golf Tournament</title>
+<style>
+    :root {
+      /* Palette — Section 02, Quick Reference p.18 */
+      --navy:        #0F3C5A;   /* Deep Water Navy  · headers, dark grounds   */
+      --logo-blue:   #07569B;   /* Logo Blue        · identity, primary action*/
+      --impact-blue: #1A6CA8;   /* IMPACT Blue      · accents, emphasis       */
+      --web-blue:    #6D9EEB;   /* Web UI Blue      · light panels, focus     */
+      --aqua:        #5AC3E3;   /* Droplet Aqua     · icons, highlights       */
+      --cream:       #F4F1EA;   /* Honduran Cream   · section blocks only     */
+      --mist:        #EEF4F8;   /* Page Mist        · page ground             */
+      --ink:         #333333;   /* body text                                  */
+      --muted:       #666666;   /* captions, meta                             */
+      --line:        #D8E1E9;
+      --alert:       #9E3B2E;   /* deep brick — brand forbids bright red      */
+      --confirm:     #07569B;   /* completion mark                            */
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      margin: 0;
+      padding: 0 0 50px;
+      background: var(--mist);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;   /* Section 04 — Arial only */
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .wrap { max-width: 740px; margin: 0 auto; background: #fff; }
+
+    /* ---- Eyebrow rhythm: tracked uppercase + bold title (Section 04) ---- */
+    .eyebrow {
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3.5px;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* ---------- Site header: white bar, wordmark only (Section 10) ------- */
+    .site-header {
+      background: #fff;
+      padding: 15px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header img { display: block; width: 168px; height: auto; }
+
+    /* ---------- Hero block: full-width navy band (Section 08) ------------ */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 26px 22px 24px;
+    }
+    .hero .eyebrow { color: var(--aqua); margin-bottom: 11px; }
+    .hero h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.15;
+      font-weight: bold;
+      letter-spacing: -0.2px;
+    }
+    .hero .sub {
+      margin: 12px 0 0;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #C9DCE9;
+    }
+
+    .lead {
+      padding: 20px 22px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+    }
+    .lead strong { color: var(--navy); }
+
+    /* ---------- Sections ------------------------------------------------- */
+    section { padding: 24px 22px; }
+    section + section { border-top: 1px solid var(--line); }
+    section.on-cream { background: var(--cream); }
+
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .badge {
+      flex: 0 0 auto;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--logo-blue);
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 30px;
+      text-align: center;
+    }
+    .sec-head .titles { min-width: 0; }
+    .sec-head .eyebrow { color: var(--logo-blue); margin-bottom: 2px; }
+    .sec-head h2 {
+      margin: 0;
+      font-size: 19px;
+      font-weight: bold;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    /* ---------- Droplet divider motif ------------------------------------ */
+    .droplet-rule { display: flex; align-items: center; gap: 11px; margin: 0 0 18px; }
+    .droplet-rule .bar { flex: 1 1 auto; height: 1px; background: var(--line); }
+    .droplet-rule svg { flex: 0 0 auto; width: 13px; height: 17px; display: block; }
+
+    /* ---------- Form controls -------------------------------------------- */
+    label.field { display: block; margin-bottom: 20px; }
+    label.field .lbl {
+      display: block;
+      font-weight: bold;
+      font-size: 14px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    label.field .hint {
+      display: block;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 7px;
+      line-height: 1.5;
+    }
+    input[type=text], input[type=email], input[type=tel] {
+      width: 100%;
+      padding: 14px 13px;
+      font-size: 16px;               /* 16px keeps iOS from zooming on focus */
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid #A8BAC8;
+      border-radius: 2px;
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--logo-blue);
+      box-shadow: 0 0 0 3px rgba(109,158,235,.35);
+    }
+    input.bad { border-color: var(--alert); }
+    .req { color: var(--alert); font-weight: bold; }
+
+    .error {
+      display: none;
+      padding: 13px 15px;
+      margin: 0 0 16px;
+      background: #FAF0EE;
+      color: #7A2C22;
+      border-left: 4px solid var(--alert);
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+    .error.show { display: block; }
+
+    /* ---------- Primary action -------------------------------------------- */
+    .submit-zone { padding: 6px 22px 28px; }
+    button.submit {
+      width: 100%;
+      padding: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: #fff;
+      background: var(--logo-blue);
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+    }
+    button.submit:active { background: var(--navy); }
+    button.submit:disabled { background: #8FA6B6; cursor: default; }
+
+    .spinner {
+      display: inline-block;
+      width: 13px; height: 13px;
+      margin-right: 9px;
+      vertical-align: -1px;
+      border: 2px solid rgba(255,255,255,.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .fine {
+      font-size: 12.5px;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 14px 0 0;
+    }
+
+    /* ---------- Facts list ------------------------------------------------ */
+    ul.facts { list-style: none; margin: 0; padding: 0; }
+    ul.facts li {
+      padding: 9px 0;
+      font-size: 14.5px;
+      line-height: 1.55;
+      border-bottom: 1px solid var(--line);
+    }
+    ul.facts li:last-child { border-bottom: none; }
+    ul.facts .k {
+      display: block;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--logo-blue);
+    }
+
+    a.textlink { color: var(--logo-blue); font-weight: bold; }
+
+    /* ---------- Confirmation view ----------------------------------------- */
+    #done { display: none; }
+    #done .body { padding: 34px 24px 34px; text-align: center; }
+    #done .tick {
+      width: 54px; height: 54px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: var(--confirm);
+      color: #fff;
+      font-size: 27px;
+      line-height: 54px;
+      text-align: center;
+    }
+    #done h2 { margin: 0 0 12px; font-size: 21px; font-weight: bold; color: var(--navy); line-height: 1.25; }
+    #done .body p { margin: 0 0 12px; font-size: 15px; }
+    #done .body p.meta { font-size: 13.5px; font-style: italic; color: var(--muted); }
+    #done .ref {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 9px 15px;
+      background: var(--cream);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* ---------- Footer ---------------------------------------------------- */
+    .site-footer {
+      background: var(--navy);
+      padding: 18px 22px;
+      text-align: center;
+    }
+    .site-footer .eyebrow {
+      color: #7E9FB5;
+      letter-spacing: 2.5px;
+      font-size: 10px;
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 19px; }
+      .hero, .lead, section, .submit-zone, .site-header { padding-left: 17px; padding-right: 17px; }
+      .sec-head h2 { font-size: 17px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- Site header — wordmark only on a white bar (Style Guide, Section 10) -->
+  <div class="site-header">
+    <img src="data:image/png;base64,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" alt="IMPACT">
+  </div>
+
+  <!-- ===================== SIGN-IN VIEW ===================== -->
+  <div id="signin">
+
+    <div class="hero">
+      <p class="eyebrow">2026 Charity Golf Tournament</p>
+      <h1>Player Sign-In</h1>
+      <p class="sub">Canyon Springs Golf Club &middot; September 24, 2026 &middot; 9:00 AM shotgun start</p>
+    </div>
+
+    <div class="lead">
+      Welcome, and thank you for playing. <strong>Sign in below</strong> so we know you made it —
+      it takes about fifteen seconds.
+    </div>
+
+    <section>
+      <div class="sec-head">
+        <div class="badge">1</div>
+        <div class="titles">
+          <p class="eyebrow">Who&rsquo;s playing</p>
+          <h2>Tell us who you are</h2>
+        </div>
+      </div>
+
+      <div class="error" id="err"></div>
+
+      <label class="field">
+        <span class="lbl">Full name <span class="req">*</span></span>
+        <input type="text" id="playerName" autocomplete="name"
+               autocapitalize="words" placeholder="Jane Doe">
+      </label>
+
+      <label class="field">
+        <span class="lbl">Email <span class="req">*</span></span>
+        <span class="hint">So we can send you photos and results after the tournament.</span>
+        <input type="email" id="playerEmail" autocomplete="email"
+               autocapitalize="off" autocorrect="off" inputmode="email"
+               placeholder="jane@example.com">
+      </label>
+
+      <label class="field">
+        <span class="lbl">Mobile phone</span>
+        <span class="hint">Optional &mdash; only used to reach you on the course today.</span>
+        <input type="tel" id="playerPhone" autocomplete="tel"
+               inputmode="tel" placeholder="(210) 555-0123">
+      </label>
+    </section>
+
+    <div class="submit-zone">
+      <button class="submit" id="btn" type="button">Sign me in</button>
+      <p class="fine">Impact Water uses your contact information only for tournament
+        follow-up and our newsletter. We never sell or share it.</p>
+    </div>
+
+    <section class="on-cream">
+      <div class="droplet-rule">
+        <span class="bar"></span>
+        <svg viewBox="0 0 24 32" aria-hidden="true">
+          <path d="M12 0 C12 0 1 14 1 21 A11 11 0 0 0 23 21 C23 14 12 0 12 0 Z"
+                fill="#5AC3E3"/>
+          <path d="M7 20 a5 5 0 0 0 5 5" fill="none" stroke="#fff"
+                stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="bar"></span>
+      </div>
+      <ul class="facts">
+        <li><span class="k">Format</span>Four-person scramble</li>
+        <li><span class="k">Start</span>9:00 AM shotgun</li>
+        <li><span class="k">Included</span>Breakfast &amp; lunch</li>
+        <li><span class="k">Hole-in-one</span>Two-year Lexus NX lease</li>
+      </ul>
+    </section>
+
+    <div class="site-footer">
+      <p class="eyebrow">Impact Water &middot; 2026 Golf Tournament &middot; Canyon Springs</p>
+    </div>
+  </div>
+
+  <!-- ===================== CONFIRMATION VIEW ===================== -->
+  <div id="done">
+    <div class="hero">
+      <p class="eyebrow">You&rsquo;re signed in</p>
+      <h1>Thanks for playing today</h1>
+      <p class="sub">Canyon Springs Golf Club &middot; September 24, 2026</p>
+    </div>
+
+    <div class="body">
+      <div class="tick">&#10003;</div>
+      <h2 id="doneName">You&rsquo;re all set</h2>
+      <p>Your sign-in is recorded. Head to the first tee &mdash; and enjoy the round.</p>
+      <p>Every team playing today helps fund a gravity-fed water system for a village in
+        Honduras. That is the whole point of the morning.</p>
+      <p class="meta" id="doneTime"></p>
+    </div>
+
+    <div class="site-footer">
+      <p class="eyebrow">Changing the life of a village and the heart of a man</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ================== CONFIGURATION ==================
+     Set ENDPOINT once and this page is live.
+
+     MODE 'form'  — ENDPOINT is a Google Form POST URL, i.e. the form's
+                    /viewform URL with viewform replaced by formResponse.
+                    FIELDS holds the entry.NNNN ids from the form's
+                    "Get pre-filled link".
+     MODE 'exec'  — ENDPOINT is an Apps Script /exec URL. Posts JSON as
+                    text/plain so no CORS preflight is triggered.
+  ==================================================== */
+  var MODE     = 'form';
+  var ENDPOINT = '';
+  var FIELDS   = {
+    name:  'entry.0000000000',
+    email: 'entry.0000000000',
+    phone: 'entry.0000000000'
+  };
+  var PAGE_VERSION = '9.23.2026';
+
+  var $ = function (id) { return document.getElementById(id); };
+  var btn = $('btn'), err = $('err');
+
+  function fail(msg, focusEl) {
+    err.textContent = msg;
+    err.className = 'error show';
+    err.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (focusEl) { focusEl.className = 'bad'; focusEl.focus(); }
+  }
+
+  function clearFail() {
+    err.className = 'error';
+    $('playerName').className = '';
+    $('playerEmail').className = '';
+  }
+
+  function looksLikeEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  }
+
+  function finish(name) {
+    var first = name.split(/\s+/)[0] || 'You';
+    $('doneName').textContent = first + ', you’re all set';
+    var d = new Date();
+    $('doneTime').textContent = 'Signed in at ' +
+      d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    $('signin').style.display = 'none';
+    $('done').style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+
+  btn.addEventListener('click', function () {
+    clearFail();
+
+    var name  = $('playerName').value.trim();
+    var email = $('playerEmail').value.trim();
+    var phone = $('playerPhone').value.trim();
+
+    if (name.length < 2)      { return fail('Please enter your name so we can check you in.', $('playerName')); }
+    if (!looksLikeEmail(email)) { return fail('That email address does not look right — please check it.', $('playerEmail')); }
+
+    if (!ENDPOINT) {
+      return fail('Sign-in is not connected yet. Please let the registration table know.');
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span>Signing you in…';
+
+    if (MODE === 'form') {
+      var fd = new FormData();
+      fd.append(FIELDS.name,  name);
+      fd.append(FIELDS.email, email);
+      if (phone) { fd.append(FIELDS.phone, phone); }
+      /* no-cors: Google Forms never answers a CORS preflight, so the response
+         is opaque by design. A network-level failure still rejects. */
+      fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: fd })
+        .then(function () { finish(name); })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Sign me in';
+          fail('We could not reach the network. Check your signal and tap again — ' +
+               'or give your name to the registration table.');
+        });
+    } else {
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          pageVersion: PAGE_VERSION,
+          name: name, email: email, phone: phone
+        })
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res && res.ok) { finish(name); }
+        else {
+          btn.disabled = false;
+          btn.textContent = 'Sign me in';
+          fail((res && res.message) || 'Something went wrong. Please try again.');
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Sign me in';
+        fail('We could not reach the network. Check your signal and tap again — ' +
+             'or give your name to the registration table.');
+      });
+    }
+  });
+
+  /* Enter key moves forward through the three fields, then submits. */
+  ['playerName', 'playerEmail', 'playerPhone'].forEach(function (id, i, all) {
+    $(id).addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter') { return; }
+      e.preventDefault();
+      if (i < all.length - 1) { $(all[i + 1]).focus(); } else { btn.click(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
