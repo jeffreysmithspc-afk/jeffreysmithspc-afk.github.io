@@ -401,11 +401,11 @@
                     text/plain so no CORS preflight is triggered.
   ==================================================== */
   var MODE     = 'form';
-  var ENDPOINT = '';
+  var ENDPOINT = 'https://docs.google.com/forms/d/e/1FAIpQLSc0cNNwTEL_---gg1-8EWGbSKkX2eZknRtjC1OxdQBBUwjRdA/formResponse';
   var FIELDS   = {
-    name:  'entry.0000000000',
-    email: 'entry.0000000000',
-    phone: 'entry.0000000000'
+    name:  'entry.161244494',
+    email: 'entry.347037665',
+    phone: 'entry.1689587454'
   };
   var PAGE_VERSION = '9.23.2026';
 
@@ -458,13 +458,14 @@
     btn.innerHTML = '<span class="spinner"></span>Signing you in…';
 
     if (MODE === 'form') {
-      var fd = new FormData();
-      fd.append(FIELDS.name,  name);
-      fd.append(FIELDS.email, email);
-      if (phone) { fd.append(FIELDS.phone, phone); }
-      /* no-cors: Google Forms never answers a CORS preflight, so the response
-         is opaque by design. A network-level failure still rejects. */
-      fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: fd })
+      var body = new URLSearchParams();
+      body.append(FIELDS.name,  name);
+      body.append(FIELDS.email, email);
+      if (phone) { body.append(FIELDS.phone, phone); }
+      /* URL-encoded body is a CORS "simple" request, so no preflight. Google
+         Forms returns an opaque response to no-cors by design; a network-level
+         failure still rejects and shows the retry message. */
+      fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
         .then(function () { finish(name); })
         .catch(function () {
           btn.disabled = false;
